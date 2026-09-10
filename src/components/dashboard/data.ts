@@ -13,7 +13,7 @@ export const kpis = [
     label: "Pending Approvals",
     value: "14",
     caption: "awaiting sign-off",
-    delta: "-3 vs last month",
+    delta: "-3 MoM",
     trend: "up" as const,
     tone: "warning" as const,
   },
