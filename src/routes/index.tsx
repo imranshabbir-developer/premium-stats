@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import {
   Area,
-  AreaChart,
+  ComposedChart,
   Bar,
   BarChart,
   CartesianGrid,
@@ -292,7 +292,7 @@ function Dashboard() {
             }
           >
             <ChartFrame height={300}>
-              <AreaChart data={monthlySpend} margin={{ left: -18, right: 8, top: 8 }}>
+              <ComposedChart data={monthlySpend} margin={{ left: -18, right: 8, top: 8 }}>
                 <defs>
                   <linearGradient id="spendFill" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="var(--chart-1)" stopOpacity={0.45} />
@@ -320,7 +320,7 @@ function Dashboard() {
                   strokeDasharray="5 5"
                   dot={false}
                 />
-              </AreaChart>
+              </ComposedChart>
             </ChartFrame>
           </Panel>
 
