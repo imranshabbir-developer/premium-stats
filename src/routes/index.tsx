@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import {
   Area,
   ComposedChart,
@@ -104,23 +104,12 @@ const toneStyles: Record<string, { icon: ReactNode; ring: string; text: string; 
   },
 };
 
-function useMounted() {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-  return mounted;
-}
-
 function ChartFrame({ height, children }: { height: number; children: ReactNode }) {
-  const mounted = useMounted();
   return (
     <div style={{ height }} className="w-full">
-      {mounted ? (
-        <ResponsiveContainer width="100%" height="100%">
-          {children as never}
-        </ResponsiveContainer>
-      ) : (
-        <div className="h-full w-full animate-pulse rounded-xl bg-muted/60" />
-      )}
+      <ResponsiveContainer width="100%" height="100%">
+        {children as never}
+      </ResponsiveContainer>
     </div>
   );
 }
@@ -239,7 +228,7 @@ function Dashboard() {
         </div>
       </div>
 
-      <div className="mx-auto -mt-16 max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto -mt-16 max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* KPI row */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           {kpis.map((kpi) => {
