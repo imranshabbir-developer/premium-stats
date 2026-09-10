@@ -415,12 +415,14 @@ function Dashboard() {
         {/* PO status + cycle time */}
         <div className="mt-6 grid gap-6 lg:grid-cols-3">
           <Panel title="Purchase Order Status" subtitle="128 orders in the current cycle">
-            <ChartFrame height={230}>
+            <ChartFrame height={240}>
               <PieChart>
                 <Pie
                   data={poStatus}
                   dataKey="value"
                   nameKey="name"
+                  cx="50%"
+                  cy="50%"
                   innerRadius={58}
                   outerRadius={92}
                   paddingAngle={3}
