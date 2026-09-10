@@ -376,6 +376,18 @@ function Dashboard() {
                 </div>
               ))}
             </div>
+            <div className="mt-5 grid grid-cols-3 divide-x divide-border rounded-xl bg-surface-strong">
+              {[
+                { label: "Active vendors", value: "42" },
+                { label: "New onboarded", value: "6" },
+                { label: "At-risk vendors", value: "3" },
+              ].map((s) => (
+                <div key={s.label} className="px-3 py-4 text-center">
+                  <p className="text-xl font-semibold text-foreground">{s.value}</p>
+                  <p className="mt-0.5 text-[11px] text-muted-foreground sm:text-xs">{s.label}</p>
+                </div>
+              ))}
+            </div>
           </Panel>
 
           <Panel
