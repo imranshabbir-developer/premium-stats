@@ -243,7 +243,7 @@ function Dashboard() {
         {/* KPI row */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           {kpis.map((kpi) => {
-            const tone = toneStyles[kpi.tone];
+            const tone = toneStyles[kpi.tone]!;
             return (
               <article
                 key={kpi.key}
